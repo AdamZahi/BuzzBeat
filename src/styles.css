@@ -108,3 +108,17 @@ footer { margin-top: 36px; text-align: center; color: var(--muted); font-size: 1
 .modal-meta h4 {
   margin: 0 0 6px;
 }
+
+/* Popularity card */
+.pop-card {
+  margin-top: 12px;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: linear-gradient(135deg, rgba(77, 208, 225, 0.08), rgba(245, 165, 36, 0.04));
+}
+.pop-score {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}

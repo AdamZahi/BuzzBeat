@@ -2,6 +2,7 @@ import React from 'react';
 import Landing from './components/Landing.jsx';
 import About from './components/About.jsx';
 import RecommendationPanel from './components/RecommendationPanel.jsx';
+import PopularityPanel from './components/PopularityPanel.jsx';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Landing />
       <About />
       <RecommendationPanel />
+      <PopularityPanel />
       <footer>Made with ♫ by BuzzBeat · Connect your backend at {import.meta.env.VITE_API_BASE || 'http://localhost:8000'}</footer>
     </div>
   );
