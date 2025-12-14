@@ -3,15 +3,16 @@ import Landing from './components/Landing.jsx';
 import About from './components/About.jsx';
 import RecommendationPanel from './components/RecommendationPanel.jsx';
 import PopularityPanel from './components/PopularityPanel.jsx';
+import logo from '../assets/lg02.png';
 
 function App() {
   return (
     <div className="shell">
       <header>
         <div className="brand">
-          <img src="/assets/lg02.png" alt="BuzzBeat logo" style={{ height: '176px', width: 'auto' }} />
+          <img src={logo} alt="BuzzBeat logo" style={{ height: '166px', width: 'auto' }} />
         </div>
-        {/* <span className="pill">Smart music discovery</span> */}
+        <span className="pill">Smart music discovery</span>
       </header>
       <Landing />
       <About />
