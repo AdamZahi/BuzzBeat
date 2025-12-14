@@ -8,8 +8,10 @@ function App() {
   return (
     <div className="shell">
       <header>
-        <div className="brand"><span className="dot" />BuzzBeat</div>
-        <span className="pill">Smart music discovery</span>
+        <div className="brand">
+          <img src="/assets/lg02.png" alt="BuzzBeat logo" style={{ height: '176px', width: 'auto' }} />
+        </div>
+        {/* <span className="pill">Smart music discovery</span> */}
       </header>
       <Landing />
       <About />
