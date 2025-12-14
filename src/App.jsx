@@ -10,7 +10,7 @@ function App() {
     <div className="shell">
       <header>
         <div className="brand">
-          <img src={logo} alt="BuzzBeat logo" style={{ height: '166px', width: 'auto' }} />
+            <img src={logo} alt="BuzzBeat logo" style={{ height: '166px', width: 'auto' }} />
         </div>
         <span className="pill">Smart music discovery</span>
       </header>
