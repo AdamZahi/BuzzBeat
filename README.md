@@ -1,39 +1,37 @@
 # BuzzBeat Frontend
 
-Full React + Vite build for the BuzzBeat music recommender.
+React + Vite single-page app for BuzzBeat’s music discovery tools.
 
-## Prereqs
-- Node.js 18+ recommended
+## Requirements
+- Node.js 18+
 
-## Setup
+## Quick start
 ```sh
 cd frontend
 npm install
+npm run dev   # starts Vite dev server (open printed URL, usually http://localhost:5173)
 ```
 
-## Run dev
-```sh
-npm run dev
-# open the shown URL, e.g. http://localhost:5173
-```
-
-## Build
+## Production build
 ```sh
 npm run build
-npm run preview  # optional to serve the build locally
+npm run preview   # optional: serve the build locally
 ```
 
-## Config
-- Backend base URL: set `VITE_API_BASE` in a `.env` file (defaults to `http://localhost:8000`).
-- API used: `POST /recommend` with body `{ track_name, artist_name, k }`.
+## Configuration
+- API base URL: set `VITE_API_BASE` in a `.env` file. Default: `http://localhost:8000`.
+- Routes: Home, Recommendations, Popularity, Mood, Song length, Playlist.
 
-## Features
-- Landing hero and value props for BuzzBeat
-- Recommendation form with live error states and loading
-- Up to 5 dataset-based recommendations, plus auto-Spotify fallback
-- Click any recommendation to open a details modal with Spotify metadata and an audio preview button (when available)
+## Capabilities
+- Landing page with value props and CTA.
+- Recommendations: enter track + artist, auto-selects best match, shows 5 similar songs, modal with Spotify details.
+- Popularity + durability: predict buzz score and expected staying power in one view.
+- Mood: predict track mood with automatic Spotify suggestion retry.
+- Song length: search Spotify, auto-pick first hit, estimate duration with fallbacks.
+- Playlist: build a similar-song playlist from one seed with Spotify links and cover art.
+- Shared animated loader for all async actions.
 
-## File map
-- `src/App.jsx` main layout
-- `src/components/*` UI sections
-- `src/styles.css` theming
+## Source layout
+- `src/App.jsx` – router, shell, footer.
+- `src/components/` – feature panels and shared pieces (loader, hero, about, etc.).
+- `src/styles.css` – theme, layout, animations.
