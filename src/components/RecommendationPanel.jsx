@@ -1,4 +1,5 @@
 import React from 'react';
+import Loader from './Loader.jsx';
 
 const API_BASE = import.meta.env.VITE_API_BASE || 'https://Adam16.pythonanywhere.com/';
 
@@ -120,6 +121,7 @@ function RecommendationPanel() {
           </button>
         </div>
       </form>
+      {loading && <Loader label="Finding songs that fit..." />}
       {error && <div className="status error">{error}</div>}
 
       {result && result.source === 'spotify_auto_no_match' && (
@@ -162,7 +164,7 @@ function RecommendationPanel() {
               <h3>Song details</h3>
               <button className="btn btn-ghost" type="button" onClick={closeDetails}>Close</button>
             </div>
-            {modal.loading && <div className="status">Loading...</div>}
+            {modal.loading && <Loader label="Pulling song details..." />}
             {modal.error && <div className="status error">{modal.error}</div>}
             {!modal.loading && !modal.error && modal.data && (
               <div className="modal-body">
