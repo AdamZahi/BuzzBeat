@@ -1,7 +1,7 @@
 import React from 'react';
 import Loader from './Loader.jsx';
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'https://adam16.pythonanywhere.com';
+const API_BASE = import.meta.env.VITE_API_BASE || 'https://Adam16.pythonanywhere.com/';
 
 function PopularityPanel() {
   const [track, setTrack] = React.useState('');
@@ -9,6 +9,14 @@ function PopularityPanel() {
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState('');
   const [result, setResult] = React.useState(null);
+
+  const formatWeeks = (weeks) => {
+    if (!Number.isFinite(weeks)) return 'N/A';
+    if (weeks < 1) return `${(weeks * 7).toFixed(1)} days`;
+    if (weeks < 52) return `${weeks.toFixed(1)} weeks`;
+    const years = weeks / 52;
+    return `${weeks.toFixed(1)} weeks (${years.toFixed(1)} years)`;
+  };
 
   const submit = async (e) => {
     e.preventDefault();
@@ -91,10 +99,10 @@ function PopularityPanel() {
               )}
               {result.durability && !result.durability.error && (
                 <div className="status">
-                  Likely to stay hot ~{Number.isFinite(result.durability.weeks) ? result.durability.weeks.toFixed(1) : 'N/A'} weeks
+                  Likely to stay hot for {formatWeeks(result.durability.weeks)}
                   {Number.isFinite(result.durability.lower) && Number.isFinite(result.durability.upper) && (
                     <>
-                      <br />Comfort band: {result.durability.lower.toFixed(1)} to {result.durability.upper.toFixed(1)} weeks
+                      <br />Comfort band: {formatWeeks(result.durability.lower)} to {formatWeeks(result.durability.upper)}
                     </>
                   )}
                 </div>
