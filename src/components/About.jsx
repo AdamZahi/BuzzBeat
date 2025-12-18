@@ -5,15 +5,19 @@ function About() {
     <div className="features" id="about">
       <div className="feature">
         <b>Human feel</b>
-        Recommendations consider mood + pace, not just raw similarity.
+        Recommendations consider mood and pace, not just plain matching.
       </div>
       <div className="feature">
-        <b>Developer-friendly</b>
-        Public API at <code>/recommend</code>—easy to wire into side projects.
+        <b>Easy to use</b>
+        Type a song, pick a match, and play—no manuals needed.
       </div>
       <div className="feature">
         <b>Built for speed</b>
-        Artifacts load once, so every query returns in milliseconds.
+        Results land fast enough to keep the vibe going.
+      </div>
+      <div className="feature">
+        <b>New: instant playlist</b>
+        Start from one song and grow a playlist that feels like it.
       </div>
     </div>
   );
